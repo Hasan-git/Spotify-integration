@@ -1,0 +1,8 @@
+<div class="artist-box" fxFlex="0 0 320px" fxLayout="column" fxLayoutGap="10px">
+  <img class="artist-image" [defaultImage]="'assets/images/placeholder.png'" [lazyLoad]="artist?.images[1]?.url">
+  <div class="artist-content" fxLayout="column">
+    <div class="name" [routerLink]="['/albums',artist?.id,artist.name]">{{artist?.name}}</div>
+    <div class="followers">{{artist?.followers?.total | number}} Followers</div>
+    <star-rating class="rating" [rating]="convertRate(artist?.popularity)" [readOnly]="true" [starType]="'icon'"></star-rating>
+  </div>
+</div>

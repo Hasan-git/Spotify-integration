@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #22ce5e;
+  color: white;
+  padding: 0 25px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .back {
+    margin-right: 10px;
+  }
+
+  .header-box {
+    width: 100%;
+    max-width: 1430px;
+    margin: auto;
+    padding-left: 15px;
+    cursor: pointer;
+  }
+
+  .logout {
+    margin-right: 25px;
+    cursor: pointer;
+  }
+}

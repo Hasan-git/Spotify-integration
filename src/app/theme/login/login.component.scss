@@ -1,0 +1,22 @@
+.content {
+  min-height: 50vh;
+}
+
+button {
+  min-width: 300px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 5px 12px;
+  border-radius: 4px;
+  position: relative;
+  height: 60px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #3d3a3a;
+
+  .logo {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}

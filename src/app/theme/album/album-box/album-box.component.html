@@ -1,0 +1,15 @@
+<div class="box" fxFlex="0 0 320px" fxLayout="column" fxLayoutGap="10px">
+  <img class="image" [defaultImage]="'assets/images/placeholder.png'" [lazyLoad]="album?.images[1]?.url">
+  <div class="album-content" fxLayout="column">
+    <div class="name">{{album?.name}}</div>
+    <div class="text-secondary">{{artistName}}</div>
+
+    <div class="details pt-3">
+      <div class="">{{album?.release_date}}</div>
+      <div class="">{{album?.total_tracks}} tracks</div>
+    </div>
+
+    <!-- <div class="followers">{{album?.followers?.total | number}} Followers</div> -->
+    <!-- <star-rating class="rating" [rating]="convertRate(album?.popularity)" [readOnly]="true" [starType]="'icon'"></star-rating> -->
+  </div>
+</div>

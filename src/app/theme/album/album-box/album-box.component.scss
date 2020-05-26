@@ -1,0 +1,43 @@
+.box {
+  border: 1px solid #ddd;
+  margin-top: 50px;
+  box-shadow: 1px 1px 5px #ececec;
+
+
+  .image {
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .album-content {
+    padding: 15px 20px 10px 20px;
+    min-height: 180px;
+
+    .details {
+      margin-top: auto;
+      font-size: 14px;
+      color: #a0a0a0 !important;
+    }
+
+    >div {
+      padding: 0px 0px 5px 9px;
+    }
+
+    .name {
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .followers {
+      font-size: 14px;
+      font-weight: 500;
+      color: #737373;
+    }
+
+    .rating {
+      margin-top: 15px;
+    }
+
+  }
+}
