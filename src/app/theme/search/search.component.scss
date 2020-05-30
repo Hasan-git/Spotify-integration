@@ -9,7 +9,7 @@
 }
 
 .loader {
-  height: 80px;
+  height: 70px;
 }
 
 .search-box {
@@ -28,6 +28,8 @@
     background: url(~src/assets/images/search.png)no-repeat 100%;
     background-size: 35px;
     background-position-x: 98%;
+    margin-bottom: 5px;
+    box-shadow: none;
   }
 
   .search-input::-webkit-input-placeholder {
@@ -48,8 +50,13 @@
 }
 
 
-.container {
+.e-container {
   max-width: 1430px;
   margin: auto;
-  padding-bottom: 90px;
+  padding-bottom: 70px;
+  // min-height: 700px;
+}
+
+app-pagination {
+  width: 100%;
 }

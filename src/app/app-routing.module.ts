@@ -28,6 +28,7 @@ const routes: Routes = [
     resolve: { data: AlbumResolverService },
     data: {title: 'Albums'}
   },
+  { path: 'pagination', loadChildren: () => import('./blocks/reusable-components/pagination/pagination.module').then(m => m.PaginationModule) },
   { path: '**', redirectTo: 'search', pathMatch: 'full' },
 ]
 

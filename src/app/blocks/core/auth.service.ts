@@ -28,7 +28,6 @@ export class AuthService {
     this.isAuthenticated$,
     this.isDoneLoading$
   ]).pipe(map(values => {
-    console.log(values)
     return values.every(b => b)
   }));
 

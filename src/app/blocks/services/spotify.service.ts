@@ -14,10 +14,12 @@ export class SpotifyService {
     private httpClient: HttpClient
   ) { }
 
-  public searchArtist(filter = '') {
+  public searchArtist(filter = '', offset = 1, limit = 10) {
 
     const params = new HttpParams()
       .set('q', filter)
+      .set('offset', offset.toString())
+      .set('limit', limit.toString())
       .set('type', 'artist');
 
     return this.httpClient.get<ArtistsResponse>(`${this.baseUrl}/v1/search`, { params })

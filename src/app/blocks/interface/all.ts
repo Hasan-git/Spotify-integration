@@ -28,13 +28,13 @@ export interface Artist {
 }
 
 export interface Paginated {
-  href: string;
-  items: Artist[] | Album[];
-  limit: number;
-  next: string;
-  offset: number;
+  href?: string;
+  items?: Artist[] | Album[];
+  limit?: number;
+  next?: string;
+  offset?: number;
   previous?: any;
-  total: number;
+  total?: number;
 }
 
 export interface ArtistsResponse {

@@ -1,15 +1,15 @@
-<div>
+<div >
   <app-header [backurl]="'/search'"></app-header>
   <div class="content" fxLayout="column" fxLayoutAlign="center start">
 
-    <div class="container">
+    <div class="e-container">
 
       <div fxLayout="column" fxLayoutAlign.xs="center center" fxLayoutAlign="start start">
         <div class="artist-name">{{ artistName$ | async}}</div>
         <div class="page">Albums</div>
       </div>
 
-      <div fxLayout="row wrap" fxLayoutGap.gt-xs="30px" fxLayoutAlign.xs="center start" fxLayoutAlign="start start">
+      <div fxLayout="row wrap" fxLayoutAlign.xs="center start" fxLayoutAlign="start start">
         <app-album-box [@animate]="{value:'*',params:{y:'40%'}}" *ngFor="let album of artist?.items; trackBy: trackFn" [album]="album" [artistName]="artistName$ | async"></app-album-box>
       </div>
 

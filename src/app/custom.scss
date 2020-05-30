@@ -2,9 +2,13 @@
 @import '~css-star-rating/css/star-rating.css';
 // mport angular-star-rating.scss into your project with an import statement
 
-.rating {
-  justify-content: flex-start;
+app-artist-box {
+  .rating {
+    justify-content: flex-start;
+    margin-top: auto;
+  }
 }
+
 
 .lds-ripple {
   display: inline-block;

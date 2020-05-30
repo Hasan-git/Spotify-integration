@@ -1,0 +1,23 @@
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li a {
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.pagination li i {
+  font-size: 1.7rem;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.pagination li.active {
+  background-color: #22ce5e;
+}

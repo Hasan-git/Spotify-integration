@@ -1,15 +1,18 @@
 .artist-box {
   border: 1px solid #ddd;
-  margin-top: 50px;
+  margin-top: 20px;
   box-shadow: 1px 1px 5px #ececec;
+  margin: 10px;
 
   .artist-image {
-    height: 320px;
+    height: 240px;
     object-fit: cover;
   }
 
   .artist-content {
     padding: 15px 20px 10px 20px;
+    min-height: 130px;
+    max-height: 130px;
 
     >div {
       padding: 0px 0px 5px 9px;
@@ -26,10 +29,5 @@
       font-weight: 500;
       color: #737373;
     }
-
-    .rating {
-      margin-top: 15px;
-    }
-
   }
 }

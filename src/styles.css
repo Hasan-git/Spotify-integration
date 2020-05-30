@@ -1,3 +1,5 @@
+@import '~materialize-css/dist/css/materialize.min.css';
+
 * {
   font-family: 'Poppins', sans-serif;
   outline: 0;

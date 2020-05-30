@@ -1,3 +1,4 @@
+import { PaginationModule } from './blocks/reusable-components/pagination/pagination.module';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -39,6 +40,7 @@ import { SearchComponent } from './theme/search/search.component';
     AppRoutingModule,
     CoreModule.forRoot(),
     HeaderModule,
+    PaginationModule,
   ],
   bootstrap: [AppComponent]
 })

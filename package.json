@@ -25,6 +25,7 @@
     "angular-star-rating": "^4.0.0-beta.3",
     "core-js": "^2.6.11",
     "css-star-rating": "^1.2.4",
+    "materialize-css": "^0.97.8",
     "ng-lazyload-image": "^7.1.0",
     "ngx-ui-loader": "^9.1.1",
     "rxjs": "^6.5.4",
