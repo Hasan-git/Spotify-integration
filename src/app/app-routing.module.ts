@@ -12,18 +12,21 @@ const routes: Routes = [
 
   {
     path: 'login',
-    loadChildren: () => import('./theme/login/login.module').then(m => m.LoginModule)
+    loadChildren: () => import('./theme/login/login.module').then(m => m.LoginModule),
+    data: {title: 'Login'}
   },
   {
     path: 'search',
     component: SearchComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data: {title: 'Artists'}
   },
   {
     path: 'albums/:id/:name',
     component: AlbumComponent,
     canActivate: [AuthGuard],
-    resolve: { data: AlbumResolverService }
+    resolve: { data: AlbumResolverService },
+    data: {title: 'Albums'}
   },
   { path: '**', redirectTo: 'search', pathMatch: 'full' },
 ]

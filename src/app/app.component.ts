@@ -1,8 +1,13 @@
+import { TitleService } from './blocks/utils/title.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { AuthService } from './blocks/core/auth.service';
+import { Title } from '@angular/platform-browser';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { filter, map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-root',
@@ -16,7 +21,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private ngxLoader: NgxUiLoaderService
+    private ngxLoader: NgxUiLoaderService,
+    private titleService: TitleService
   ) {
 
     this.isDoneLoading = this.authService.isDoneLoading$;
@@ -28,14 +34,16 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.watchSplachProgress()
+    this.watchSplachProgress();
+
+    this.titleService.init()
   }
 
   // ---------------------------------------------------------------
   // Private method
   // ---------------------------------------------------------------
   private watchSplachProgress() {
-    this.isDoneLoading.subscribe(_ => this.ngxLoader.stopLoader('splash-screen'))
+    this.isDoneLoading.subscribe(_ => this.ngxLoader.stopLoader('splash-screen'));
   }
 
 }
