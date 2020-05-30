@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="e-container" fxLayout="row wrap"  fxLayoutAlign="center start">
+    <div class="e-container" fxLayout="row wrap" fxLayoutAlign="center start">
       <app-artist-box [@animate]="{value:'*',params:{y:'40%'}}" *ngFor="let artist of (artists$ | async)?.items; trackBy: trackFn" [artist]="artist"></app-artist-box>
     </div>
 

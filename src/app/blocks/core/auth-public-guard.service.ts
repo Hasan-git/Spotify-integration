@@ -24,7 +24,6 @@ export class AuthPublicGuard implements CanActivate {
     return this.authService.canActivateProtectedRoutes$
       .pipe(
         tap(canActivate => {
-          console.log(canActivate)
           // @ Is authenticated ?
           if (canActivate) {
             let previousUrl = localStorage.getItem("previousUrl")

@@ -1,11 +1,11 @@
-import { Paginated, Artist } from './../../blocks/interface/all';
-import { Observable, Subscription, Subject, BehaviorSubject, of, observable, EMPTY, empty } from 'rxjs';
-import { SpotifyService } from '../../blocks/services/spotify.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { takeUntil, debounceTime, distinctUntilChanged, switchMap, tap, catchError, filter, map, share, skip } from 'rxjs/operators';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { catchError, debounceTime, distinctUntilChanged, filter, skip, switchMap, tap } from 'rxjs/operators';
 import { fuseAnimations } from 'src/app/blocks/animations';
-import { ActivatedRoute } from '@angular/router';
+
+import { SpotifyService } from '../../blocks/services/spotify.service';
+import { Paginated } from './../../blocks/interface/all';
 
 @Component({
   selector: 'app-search',
@@ -37,22 +37,9 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.watchSearchInput()
 
-    this.artists$.subscribe(e => console.log(e))
-
-    this.fetch$
-      .pipe(
-        skip(1),
-        tap(_ => this.loading = true),
-        switchMap(value => this.spotifyService.searchArtist(this.search.value, this.offset, this.limit)),
-        catchError((err, source) => { return source; }), // @ Notify user , do something
-        tap(_ => this.loading = false),
-      ).subscribe(
-        data => {
-          this.artistsSubjective$.next(data);
-          this.count = data.total;
-        });
+    this.watchSearchInput();
+    this.fetchProcessor();
   }
 
   /**
@@ -68,6 +55,22 @@ export class SearchComponent implements OnInit {
   // ------------------------------------------------------
   //  Public methods
   // ------------------------------------------------------
+
+
+  fetchProcessor() {
+    this.fetch$
+      .pipe(
+        skip(1),
+        tap(_ => this.loading = true),
+        switchMap(value => this.spotifyService.searchArtist(this.search.value, this.offset, this.limit)),
+        catchError((err, source) => { return source; }), // @ Notify user , do something
+        tap(_ => this.loading = false),
+      ).subscribe(
+        data => {
+          this.artistsSubjective$.next(data);
+          this.count = data.total;
+        });
+  }
 
   watchSearchInput() {
     this.search.valueChanges

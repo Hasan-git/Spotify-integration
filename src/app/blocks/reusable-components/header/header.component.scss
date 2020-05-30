@@ -21,10 +21,17 @@
     margin: auto;
     padding-left: 15px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
   }
 
   .logout {
     margin-right: 25px;
     cursor: pointer;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
   }
 }

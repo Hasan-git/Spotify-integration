@@ -1,7 +1,9 @@
 <div class="header">
   <div class="header-box">
-    <img [hidden]="!backurl" [routerLink]="[backurl]" class="back" width="25px" height="25px" src="assets/images/left-arrow-white.png">
-    Spotify Artist Search
+    <div class="left">
+      <img [hidden]="!backurl" [routerLink]="[backurl]" class="back" width="25px" height="25px" src="assets/images/left-arrow-white.png">
+      <div>Spotify Artist Search</div>
+    </div>
+    <img [hidden]="!showLogout" (click)="logout()" class="logout" height="40px" width="40px" src="./assets/images/logout-white.png" />
   </div>
-  <!-- <img  class="logout" height="40px" width="40px" src="./assets/images/logout-white.png" /> -->
 </div>

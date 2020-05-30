@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Input() backurl: string;
+  @Input() showLogout: boolean = true;
 
   constructor(
     private authService: AuthService
@@ -22,7 +23,7 @@ export class HeaderComponent implements OnInit {
   // ---------------------------------------------
   // Public methods
   // -----------------------------------------------
-  logout() { this.authService.logout(); }
-
-
+  logout() {
+    this.authService.logout()
+  }
 }
